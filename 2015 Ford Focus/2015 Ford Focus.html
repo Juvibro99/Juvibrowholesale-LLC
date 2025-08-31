@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)file:///C:/Users/Admin/Desktop/Website%20Projects/Lincoln%20MKZ%20Html/index.html -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juvibrowholesale - Vehicle Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2 {
+        margin-bottom: 10px;
+      }
+      .vehicle-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      .vehicle-info div {
+        padding: 5px 0;
+      }
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      .carousel img {
+        width: 100%;
+        display: none;
+      }
+      .carousel img.active {
+        display: block;
+      }
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 50%;
+      }
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+      .sale-section {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 8px;
+      }
+      .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: green;
+      }
+      .status {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+      .carfax-link {
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>2015 Ford Focus SE Appearance Package</h1>
+
+      <div class="vehicle-info">
+        <div><strong>Year:</strong> 2015</div>
+        <div><strong>Make:</strong> Ford</div>
+        <div><strong>Model:</strong> Focus SE</div>
+        <div><strong>Spec:</strong> SE Appearance Package</div>
+        <div><strong>VIN:</strong> 1FADP3F2XFL211162</div>
+        <div><strong>Miles:</strong> 68,600</div>
+        <div><strong>Engine:</strong> 2.0L I4</div>
+        <div><strong>Cylinders:</strong> 4</div>
+        <div><strong>Fuel Type:</strong> Gasoline</div>
+        <div><strong>Transmission:</strong> Automatic</div>
+        <div><strong>Interior:</strong> Cloth Seats</div>
+        <div><strong>Price:</strong> $8,000</div>
+      </div>
+
+      <div class="carousel">
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+        <img src="images/Focus 1.JPG" class="active" alt="Car Photo 1" />
+        <img src="images/Focus 2.JPG" class="active" alt="Car photo 2" />
+        <img src="images/Focus 3.JPG" class="active" alt="Car photo 3" />
+        <img src="images/Focus 4.JPG" class="active" alt="Car Photo 4" />
+        <img src="images/Focus 5.JPG" class="active" alt="Car photo 5" />
+        <img src="images/Focus 6.JPG" class="active" alt="Car photo 6" />
+        <img src="images/Focus 7.JPG" class="active" alt="Car Photo 7" />
+        <img src="images/Focus 8.JPG" class="active" alt="Car photo 8" />
+        <img src="images/Focus 9.JPG" class="active" alt="Car photo 9" />
+        <img src="images/Focus 10.JPG" class="active" alt="Car Photo 10" />
+        <img src="images/Focus 11.JPG" class="active" alt="Car photo 11" />
+        <img src="images/Focus 12.JPG" class="active" alt="Car photo 12" />
+        <img src="images/Focus 13.JPG" class="active" alt="Car photo 13" />
+        <img src="images/Focus 14.JPG" class="active" alt="Car photo 13" />
+        <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+      </div>
+
+      <div class="sale-section">
+        <div class="status"><strong>Status:</strong> Available</div>
+        <div class="price">$8,000</div>
+        <div class="price">plus applicable tax, registration, and doc fees</div>
+        <a
+          class="carfax-link"
+          href="CARFAX Vehicle History Report for this 2015 FORD FOCUS SE_ 1FADP3F2XFL211162.pdf"
+          target="_blank"
+          >View Carfax Report</a
+        >
+      </div>
+    </div>
+
+    <script>
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".carousel img");
+
+      function changeSlide(n) {
+        slides[slideIndex].classList.remove("active");
+        slideIndex = (slideIndex + n + slides.length) % slides.length;
+        slides[slideIndex].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
